@@ -8,6 +8,7 @@ on:
       - fly.toml
       - Dockerfile
       - .github/workflows/deploy.yml
+      - readme.md
     branches:
       - main
 jobs:
