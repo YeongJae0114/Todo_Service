@@ -20,11 +20,11 @@ jobs:
         env:
           APPLICATION_SECRET: ${{ secrets.APPLICATION_SECRET_YML }}
         run: |
-          mkdir -p Todo/demo3/src/main/resources
-          echo "$APPLICATION_SECRET" > Todo/demo3/src/main/resources/application-secret.yml
+          mkdir -p demo3/src/main/resources
+          echo "$APPLICATION_SECRET" > demo3/src/main/resources/application-secret.yml
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Deploy to Fly.io
-        working-directory: ./Todo/demo3
+        working-directory: ./demo3
         run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
