@@ -2,13 +2,12 @@ name: Fly Deploy
 on:
   push:
     paths:
-      - settings.gradle
-      - build.gradle
-      - deom3/src/**
-      - fly.toml
-      - Dockerfile
+      - Todo/demo3/settings.gradle
+      - Todo/demo3/build.gradle
+      - Todo/demo3/src/**
+      - Todo/demo3/fly.toml
+      - Todo/demo3/Dockerfile
       - .github/workflows/deploy.yml
-      - readme.md
     branches:
       - main
 jobs:
@@ -20,10 +19,12 @@ jobs:
       - name: application-secret.yml 생성
         env:
           APPLICATION_SECRET: ${{ secrets.APPLICATION_SECRET_YML }}
-        run: echo "$APPLICATION_SECRET" > deom3/src/main/resources/application-secret.yml
+        run: |
+          mkdir -p Todo/demo3/src/main/resources
+          echo "$APPLICATION_SECRET" > Todo/demo3/src/main/resources/application-secret.yml
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Deploy to Fly.io
-        working-directory: ./deom3
+        working-directory: ./Todo/demo3
         run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
