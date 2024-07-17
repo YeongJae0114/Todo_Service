@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: demo2
+  profiles:
+    active: dev
+  custom:
+    site:
+      name: "My site"
+
