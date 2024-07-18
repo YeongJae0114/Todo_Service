@@ -1,6 +1,6 @@
-package com.example.demo.controller;
+package com.example.demo.domain.home.home.controller;
 
-import com.example.demo.domain.Surl;
+import com.example.demo.domain.surl.surl.entity.Surl;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.bind.annotation.GetMapping;
