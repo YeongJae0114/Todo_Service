@@ -6,10 +6,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import lombok.*;
 
-import java.time.LocalDateTime;
 
 @Entity
 @Builder
+@Getter @Setter
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Surl extends BaseTime {

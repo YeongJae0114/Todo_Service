@@ -5,17 +5,18 @@ spring:
     active: dev
 ## DB 설정
   datasource:
-    url: jdbc:mysql://localhost:3306/surl_dev
-    username: root
-    password: Dudwo@2393
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    #url: jdbc:postgresql://localhost:5432/surl_dev
+    #password: lldj123414
+    url: jdbc:h2:./db_dev;MODE=MYSQL
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
 # JPA 설정
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create-drop
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
         default_batch_fetch_size: 100
         format_sql: true
         highlight_sql: true

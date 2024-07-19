@@ -36,8 +36,8 @@ public class NotProd {
 
     @Transactional
     public void work1(){
-        Member member1 = memberService.join("user5", "1234", "유저1").getData();
-        Member member2 = memberService.join("user6", "1234", "유저2").getData();
+        Member member1 = memberService.join("user1", "1234", "유저1").getData();
+        Member member2 = memberService.join("user2", "1234", "유저2").getData();
 
         //RsData<Member> joiRs = memberService.join("user3", "1234", "유저3");
 
